@@ -1,13 +1,14 @@
 Usage
 
-Put setup_venv.ps1 in the same directory as calendar365.py, then run:
-`.\setup_venv.ps1`
+Put `setup_venv.ps1` in the same directory as `calendar365.py`, then run:
+```
+.\setup_venv.ps1
+```
 
 If PowerShell refuses to run the script because of its execution policy, you can run it for the current PowerShell session with:
 
 ```
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-.\setup_venv.ps1
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass .\setup_venv.ps1
 ```
 
 After setup, you don't actually need to activate the environment. The script can directly use:
