@@ -1,14 +1,13 @@
-```powershell
 # setup_venv.ps1
 #
 # Creates an isolated Python virtual environment for the
-# Dutch monthly calendar generator.
+# Dutch monthly calendar generator (PDF version).
 #
 # Usage:
 #   .\setup_venv.ps1
 #
 # After setup:
-#   .\.venv\Scripts\python.exe .\maak_nederlandse_maandkalender.py 2026
+#   .\.venv\Scripts\python.exe .\calendar365.py 2026
 
 $ErrorActionPreference = "Stop"
 
@@ -98,16 +97,18 @@ Write-Host "Upgrading pip inside .venv..." -ForegroundColor Yellow
 Write-Host ""
 Write-Host "Installing Python dependencies..." -ForegroundColor Yellow
 
-& $VenvPython -m pip install odfpy
+# CHANGED: Replaced odfpy with reportlab
+& $VenvPython -m pip install reportlab
 
 # ------------------------------------------------------------
 # Verify installation
 # ------------------------------------------------------------
 
 Write-Host ""
-Write-Host "Verifying odfpy installation..." -ForegroundColor Yellow
+Write-Host "Verifying reportlab installation..." -ForegroundColor Yellow
 
-& $VenvPython -c "import odf; print('odfpy successfully installed.')"
+# CHANGED: Verify reportlab instead of odf
+& $VenvPython -c "import reportlab; print('reportlab successfully installed.')"
 
 # ------------------------------------------------------------
 # Done
@@ -123,14 +124,13 @@ Write-Host "Virtual environment:" -ForegroundColor Cyan
 Write-Host "  $VenvDir"
 
 Write-Host ""
-Write-Host "To generate a calendar for 2026:" -ForegroundColor Cyan
-Write-Host "  .\.venv\Scripts\python.exe .\maak_nederlandse_maandkalender.py 2026"
+Write-Host "To generate a PDF calendar for 2026:" -ForegroundColor Cyan
+Write-Host "  .\.venv\Scripts\python.exe .\calendar365.py 2026"
 
 Write-Host ""
 Write-Host "For example, for 2027:" -ForegroundColor Cyan
-Write-Host "  .\.venv\Scripts\python.exe .\maak_nederlandse_maandkalender.py 2027"
+Write-Host "  .\.venv\Scripts\python.exe .\calendar365.py 2027"
 
 Write-Host ""
 Write-Host "The global Python installation was not modified." -ForegroundColor Green
 Write-Host ""
-```
