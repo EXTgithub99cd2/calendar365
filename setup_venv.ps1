@@ -13,7 +13,7 @@ $ErrorActionPreference = "Stop"
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host " Nederlandse kalender - Python setup" -ForegroundColor Cyan
+Write-Host " Dutch Calendar - Python setup" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
