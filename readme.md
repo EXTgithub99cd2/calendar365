@@ -1,9 +1,11 @@
 ### 1. Install on your device
 Download the .zip archive from this repo by clicking `Code` followed by `Download ZIP`
+From your downloads folder extract all to the preferred folder.
 
 ### 2. Setup virtual environment
 
-Put `setup_venv.ps1` in the same directory as `calendar365.py`, then run:
+Put `setup_venv.ps1` in the same directory as `calendar365.py`.
+Then open a powershell window (e.g. `run pwsh`) and navigate to the specific folder and run:
 ```
 .\setup_venv.ps1
 ```
